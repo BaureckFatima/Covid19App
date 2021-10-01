@@ -1,12 +1,13 @@
 function getData()
 {
+    setTimeout(function timeOut(){
+        const API_ENDPOINT = "https://pomber.github.io/covid19/timeseries.json";
 
-    const API_ENDPOINT = "https://pomber.github.io/covid19/timeseries.json";
-
-    fetch(API_ENDPOINT)
-    .then((response) => response.json())
-    .then((data) => showData(data, "Mauritius"))
-    .catch((err) => handleError(err));
+        fetch(API_ENDPOINT)
+        .then((response) => response.json())
+        .then((data) => showData(data, "Mauritius"))
+        .catch((err) => handleError(err));
+    }, 2000);
 }
 
 function processData(data)
